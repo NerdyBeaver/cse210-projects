@@ -4,7 +4,7 @@ class Program
 {
     static void Main(string[] args)
     {
-        Console.Write("What is your grade percentage? Round to the neares whole number. ");
+        Console.Write("What is your grade percentage? Round to the nearest whole number. ");
         string grade = Console.ReadLine();
         int percentGrade = int.Parse(grade);
 
