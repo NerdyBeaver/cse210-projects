@@ -4,28 +4,38 @@ class Program
 {
     static void Main(string[] args)
     {
-        Console.Write("What is the magic number? ");
+        int guessNumber;
+        int magicNumber;
+
+         Console.Write("What is the magic number? ");
         string inputNumber = Console.ReadLine();
-        int magicNumber = int.Parse(inputNumber);
+        magicNumber = int.Parse(inputNumber);
 
-        Console.Write("What is your guess? ");
-        string guess = Console.ReadLine();
-        int guessNumber = int.Parse(guess);
+        do
+        {    
+            Console.Write("What is your guess? ");
+            string guess = Console.ReadLine();
+            guessNumber = int.Parse(guess);
 
-        if (guessNumber > magicNumber)
-        {
-            Console.WriteLine("Lower");
-        }
 
-        else if (guessNumber < magicNumber)
-        {
-            Console.WriteLine("Higher");
-        }
+            if (guessNumber > magicNumber)
+            {
+                Console.WriteLine("Lower");
+            }
 
-        else
-        {
-            Console.WriteLine("You guessed it!");
-        }
+            else if (guessNumber < magicNumber)
+            {
+                Console.WriteLine("Higher");
+            }
+
+            else
+            {
+                Console.WriteLine("You guessed it!");
+            }
+
+        } while (guessNumber != magicNumber);
+
+
 
 
 
