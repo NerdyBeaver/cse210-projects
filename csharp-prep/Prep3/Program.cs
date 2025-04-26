@@ -4,32 +4,44 @@ class Program
 {
     static void Main(string[] args)
     {
-        Random randomGenerator = new Random();
-        int magicNumber = randomGenerator.Next(0,1000);
-        int guessNumber = 0;
-
+        string answer = "";
         do
         {    
-            Console.Write("What is your guess? ");
-            string guess = Console.ReadLine();
-            guessNumber = int.Parse(guess);
+            Random randomGenerator = new Random();
+            int magicNumber = randomGenerator.Next(0,1000);
+            float guessNumber = 0;
+            int guesses = 0;
+
+            do
+            {    
+                Console.Write("\nWhat is your guess? ");
+                string guess = Console.ReadLine();
+                guessNumber = float.Parse(guess);
 
 
-            if (guessNumber > magicNumber)
-            {
-                Console.WriteLine("Lower");
-            }
+                if (guessNumber > magicNumber)
+                {
+                    Console.WriteLine("Lower");
+                }
 
-            else if (guessNumber < magicNumber)
-            {
-                Console.WriteLine("Higher");
-            }
+                else if (guessNumber < magicNumber)
+                {
+                    Console.WriteLine("Higher");
+                }
 
-            else
-            {
-                Console.WriteLine("You guessed it!");
-            }
+                else
+                {
+                    Console.WriteLine("\nYou guessed it!");
+                }
 
-        } while (guessNumber != magicNumber);
+                guesses ++;
+            } while (guessNumber != magicNumber);
+
+            Console.WriteLine($"It took you {guesses} guesses. ");
+        
+            Console.Write("\nWould you like to play again? ");
+            answer = Console.ReadLine();
+
+        }while (answer.ToLower() == "yes" || answer.ToLower() == "yes!" || answer.ToLower() == "y");
     }
 }
