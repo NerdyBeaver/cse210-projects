@@ -4,15 +4,25 @@ using System.Security.Cryptography;
 
 public class Prompt
 {
-    public List<string> _prompts = new List<string>{"Foo" ,"bar", "popo", "i", "u"};
+    List<string> prompts = new List<string>
+        {
+            "Foo",
+            "Bar",
+            "Baz",
+            "Qux",
+            "Quux"
+        };
+     
 
-    public void DisplayRandomPrompt()
+    public string DisplayRandomPrompt()
     {
         Random randomGenerator = new Random();
 
         int random_number = randomGenerator.Next(1,6);
-        string random_prompt = _prompts[random_number];
-        Console.WriteLine($"Today's prompt is: {random_prompt}");
+        string prompt = prompts[random_number];
+        Console.WriteLine(prompt);
+
+        return prompt;
 
     }
 }

@@ -1,19 +1,28 @@
 using System;
+using System.Security.Cryptography.X509Certificates;
 
 public class Entry
 {
-    string _entryTitle;
-    string _entry;
-
-    void WriteEntryTitle()
+    public string _date;
+    public string _time;
+    public string _entry;
+    public string prompt; 
+    public string WriteEntry()
     {
-        Console.WriteLine("Enter the date. Optional enter time and short title.");
-        string _entryTitle = Console.ReadLine();
-    }
+        DateTime currentTime = DateTime.Now;
+        _date = currentTime.ToShortDateString();
+        _time = currentTime.ToShortTimeString();
+        
+        Prompt _promptGenerator = new Prompt();
+        prompt = _promptGenerator.DisplayRandomPrompt();
 
-    void WriteEntry()
-    {
         _entry = Console.ReadLine();
+
+        return _entry;
     }
+
+    
+    
+    
 
 }
