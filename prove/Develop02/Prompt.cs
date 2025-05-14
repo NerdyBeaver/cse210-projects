@@ -23,7 +23,7 @@ public class Prompt
     {
         Random randomGenerator = new Random();
 
-        int random_number = randomGenerator.Next(1,11);
+        int random_number = randomGenerator.Next(0,10);
         string prompt = prompts[random_number];
         Console.WriteLine(prompt);
 

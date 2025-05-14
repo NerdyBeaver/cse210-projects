@@ -10,12 +10,13 @@ class Program
 
         while (choice != 5)
         {
-            Console.WriteLine("Please select one of the following choices (just type the integer): ");
+            Console.WriteLine("\nPlease select one of the following choices (just type the integer): \n");
             Console.WriteLine("1. Write an entry");
             Console.WriteLine("2. Display entries");
             Console.WriteLine("3. Load a file to display");
             Console.WriteLine("4. Save the current entries to a file");
             Console.WriteLine("5. Quit the program");
+            Console.WriteLine("");
 
             
             choice = int.Parse(Console.ReadLine());
