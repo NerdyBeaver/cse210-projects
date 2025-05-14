@@ -31,14 +31,28 @@ public class Journal
         }
     }
 
-   public void LoadFromFile() //Included because this is an option needed on the menu.
-                       //Simply changes _filename to the user's input so the 
-                       //file is displayed rather than just the recently typed
-                       //entries that have not been saved yet.
+   public void LoadFromFile() 
     {
         Console.WriteLine("What is the filename?");
 
         _filename = Console.ReadLine();
+
+
+        string[] lines = System.IO.File.ReadAllLines(_filename);
+
+        foreach (string line in lines)
+        {
+                string[] parts = line.Split("~|~");
+
+                Entry file_entry = new Entry();
+                file_entry._date = parts[0];
+                file_entry._time = parts[1];
+                file_entry.prompt = parts[2];
+                file_entry._entry = parts[3];
+
+                _entries.Add(file_entry);
+
+        } 
     }
 
     public void SaveToFile() //Saves the journal entries to a file with user-specified name
@@ -50,9 +64,7 @@ public class Journal
         {
             foreach (Entry listed_entry in _entries) //Goes through each entry in _entries and prints the journal entry 
             {
-                outputFile.WriteLine($"Date: {listed_entry._date} — Prompt: {listed_entry.prompt}");
-                outputFile.WriteLine($"{listed_entry._entry}");
-                outputFile.WriteLine("");
+                outputFile.WriteLine($"{listed_entry._date}~|~{listed_entry._time}~|~{listed_entry.prompt}~|~{listed_entry._entry}");
             }
             
         }
