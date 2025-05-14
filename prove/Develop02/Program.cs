@@ -16,7 +16,7 @@ class Program
             Console.WriteLine("3. Load a file to display");
             Console.WriteLine("4. Save the current entries to a file");
             Console.WriteLine("5. Quit the program");
-            Console.WriteLine("");
+            Console.WriteLine("\nWhat would you like to do? \n");
 
             
             choice = int.Parse(Console.ReadLine());
