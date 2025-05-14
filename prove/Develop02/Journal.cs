@@ -20,14 +20,11 @@ public class Journal
 
     public void Display() 
     {
-        if (_filename == "") //Displays all entries in _entries
+        foreach (Entry listed_entry in _entries) //Goes through each entry in _entries and prints the journal entry 
         {
-            foreach (Entry listed_entry in _entries) //Goes through each entry in _entries and prints the journal entry 
-            {
-                Console.WriteLine($"Date: {listed_entry._date} — Time: {listed_entry._time} — Prompt: {listed_entry.prompt}");
-                Console.WriteLine($"{listed_entry._entry}");
-                Console.WriteLine("");
-            }
+            Console.WriteLine($"Date: {listed_entry._date} — Time: {listed_entry._time} — Prompt: {listed_entry.prompt}");
+            Console.WriteLine($"{listed_entry._entry}");
+            Console.WriteLine("");
         }
     }
 
@@ -51,7 +48,6 @@ public class Journal
                 file_entry._entry = parts[3];
 
                 _entries.Add(file_entry);
-
         } 
     }
 
