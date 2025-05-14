@@ -24,9 +24,9 @@ public class Journal
         {
             foreach (Entry listed_entry in _entries) //Goes through each entry in _entries and prints the journal entry 
             {
+                Console.WriteLine($"Date: {listed_entry._date} — Prompt: {listed_entry.prompt}");
                 Console.WriteLine($"{listed_entry._entry}");
                 Console.WriteLine("");
-                Console.WriteLine($"Date: {listed_entry._date} — Prompt: {listed_entry.prompt}");
             }
         }
 
