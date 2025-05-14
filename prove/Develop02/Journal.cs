@@ -22,9 +22,11 @@ public class Journal
     {
         if (_filename == "") //Displays all entries in _entries
         {
-            foreach (Entry listed_entry in _entries)
+            foreach (Entry listed_entry in _entries) //Goes through each entry in _entries and prints the journal entry 
             {
-                Console.WriteLine(listed_entry);
+                Console.WriteLine($"{listed_entry._entry}");
+                Console.WriteLine("");
+                Console.WriteLine($"Date: {listed_entry._date} — Prompt: {listed_entry.prompt}");
             }
         }
 
