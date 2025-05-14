@@ -56,7 +56,7 @@ public class Journal
         Console.WriteLine("What is the filename?"); 
         _filename = Console.ReadLine(); //Stores the input as the filename
         
-        using (StreamWriter outputFile = new StreamWriter(_filename)) //Uses the included SteamWriter function to write to the file
+        using (StreamWriter outputFile = new StreamWriter(_filename, true)) //Uses the included SteamWriter function to write to the file
         {
             foreach (Entry listed_entry in _entries) //Goes through each entry in _entries and prints the journal entry 
             {
