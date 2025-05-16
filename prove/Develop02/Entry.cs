@@ -3,6 +3,7 @@ using System.Security.Cryptography.X509Certificates;
 
 public class Entry
 {
+    public string _weekday;
     public string _date;
     public string _time;
     public string _entry;
@@ -12,6 +13,7 @@ public class Entry
         DateTime currentTime = DateTime.Now;
         _date = currentTime.ToShortDateString();
         _time = currentTime.ToShortTimeString();
+        _weekday = currentTime.DayOfWeek.ToString();
         
         Prompt _promptGenerator = new Prompt();
         prompt = _promptGenerator.DisplayRandomPrompt();
