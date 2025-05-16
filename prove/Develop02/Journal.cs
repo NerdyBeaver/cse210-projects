@@ -103,13 +103,14 @@ public class Journal
 
             streak_entries.Add(file_entry);
         }
+        
+        i = streak_entries.Count() - 1; // i is now the number of entries in the streak_entries list
 
-        i = streak_entries.Count() - 1;
-
-        DateTime lastEntryDate = DateTime.Parse(streak_entries[i]._date);
 
         while (i > 0)
         {
+            DateTime lastEntryDate = DateTime.Parse(streak_entries[i]._date);
+
             DateTime previousDate = DateTime.Parse(streak_entries[i - 1]._date);
 
             if (lastEntryDate == previousDate.AddDays(1)) //Checks to make sure the dates are consecutive
