@@ -3,7 +3,7 @@ using System;
 public class Scripture
 {
     private Reference _reference = new Reference("Isaiah", 3, "5");
-    private List<Word> _words = new List<Word>()
+    private List<Word> _words = new List<Word>();
     public Scripture(string text)
     {
         //Split the scripture into words, create Word object for each word
