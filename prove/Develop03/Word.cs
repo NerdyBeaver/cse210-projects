@@ -23,7 +23,12 @@ public class Word
     {
         if (_isHidden)
         {
-            return "____"; // How to get same number of dashes as letters?
+            string renderedText = "";
+            for (int i = 0; i < _text.Count(); i++) //Return an underscore for each letter in the hidden word
+            {
+                renderedText = renderedText += "_"; 
+            }
+            return renderedText;
         }
 
         else
