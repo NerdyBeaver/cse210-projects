@@ -2,7 +2,7 @@ using System;
 
 public class Scripture
 {
-    private Reference _reference = new Reference("Isaiah", 3, "5");
+    private Reference _reference = new Reference("Proverbs", 3, "5", "6");
     private List<Word> _words = new List<Word>();
     public Scripture(string text)
     {
