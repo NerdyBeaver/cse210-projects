@@ -23,20 +23,29 @@ public class Scripture
         Random random = new Random();
 
         int wordsToHide = 3; // Number of words to hide each time
-        int count = _words.Count;
-
-        for (int i = 0; i < wordsToHide; i++)
+        int hiddenCount = 0;
+        int visibleWords = 0;
+        foreach (Word word in _words)
         {
-            int index = random.Next(count); // Picks a random index
+            if (!word.GetIsHidden())
+            {
+                visibleWords++;
+            }
+        }
+
+        if (visibleWords < wordsToHide)
+        {
+            wordsToHide = visibleWords;
+        }
+        
+        while (hiddenCount < wordsToHide)
+        {
+            int index = random.Next(_words.Count()); // Picks a random index
 
             if (_words[index].GetIsHidden() == false)
             {
                 _words[index].Hide(); // Hides the word at the random index
-            }
-
-            else
-            {
-                wordsToHide++; //If word was already hidden, adds 1 to wordsToHide, repeats loop again so always hides 3 words.
+                hiddenCount++;
             }
 
         }
