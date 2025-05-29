@@ -3,8 +3,12 @@ using System;
 public class Scripture
 {
     private Reference _reference = new Reference("Isaiah", 3, "5");
-    private List<Word> _words = new List<Word>();
-
+    private List<Word> _words = new List<Word>()
+    public Scripture(string text)
+    {
+        //Split the scripture into words, create Word object for each word
+        // and add it to the list
+    }
     public void HideRandomWords()
     {
         Random random = new Random();
@@ -14,8 +18,8 @@ public class Scripture
 
         for (int i = 0; i < wordsToHide; i++)
         {
-            int index = random.Next(count);    // Picks a random index
-            _words[index].Hide();               // Hides the word at the random index
+            int index = random.Next(count); // Picks a random index
+            _words[index].Hide(); // Hides the word at the random index
         }
     }
     public string GetRenderedText()
