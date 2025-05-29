@@ -2,12 +2,21 @@ using System;
 
 public class Scripture
 {
-    private Reference _reference = new Reference("Proverbs", 3, "5", "6");
+    private Reference _reference;
     private List<Word> _words = new List<Word>();
-    public Scripture(string text)
+    public Scripture(Reference reference, string text)
     {
-        //Split the scripture into words, create Word object for each word
-        // and add it to the list
+        /*Split the scripture into words, create Word object for each word
+        and add it to the list */
+        _reference = reference;
+
+        string[] words = text.Split(' '); // Splits text into individual words
+
+        foreach (string word in words)
+        {
+            Word newWord = new Word(word); // Creatse a Word object for each word
+            _words.Add(newWord);
+        }
     }
     public void HideRandomWords()
     {
@@ -24,7 +33,7 @@ public class Scripture
     }
     public string GetRenderedText()
     {
-        string result = _reference.ToString() + " - ";
+        string result = _reference.GetDisplayText() + " - ";
 
         for (int i = 0; i < _words.Count; i++)
         {
