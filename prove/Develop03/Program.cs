@@ -11,17 +11,20 @@ class Program
 
         while (input.ToLower() == "")
         {
-           Console.Clear();
+            Console.Clear();
             Console.WriteLine(scripture.GetRenderedText());
 
             if (scripture.IsCompletelyHidden())
             {
                 Console.WriteLine("All words are hidden. Good job!");
-                break;
+                input = "quit";
             }
 
-            Console.WriteLine("\nPress Enter to hide more words or type 'quit' to exit:");
-            input = Console.ReadLine();
+            else
+            {
+                Console.WriteLine("\nPress Enter to hide more words or type 'quit' to exit:");
+                input = Console.ReadLine();
+            }
 
             if (input.ToLower() == "quit")
             {
