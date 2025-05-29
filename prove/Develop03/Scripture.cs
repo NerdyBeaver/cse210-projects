@@ -28,7 +28,17 @@ public class Scripture
         for (int i = 0; i < wordsToHide; i++)
         {
             int index = random.Next(count); // Picks a random index
-            _words[index].Hide(); // Hides the word at the random index
+
+            if (_words[index].GetIsHidden() == false)
+            {
+                _words[index].Hide(); // Hides the word at the random index
+            }
+
+            else
+            {
+                wordsToHide++; //If word was already hidden, adds 1 to wordsToHide, repeats loop again so always hides 3 words.
+            }
+
         }
     }
     public string GetRenderedText()
