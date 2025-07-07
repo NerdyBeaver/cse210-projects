@@ -1,12 +1,12 @@
-class Activity
+public class Activity
 {
     protected string _activityName;
     protected string _description;
     protected int _duration;
 
-    public Activity(string name, string description)
+    public Activity(string activityName, string description)
     {
-        _activityName = name;
+        _activityName = activityName;
         _description = description;
     }
 

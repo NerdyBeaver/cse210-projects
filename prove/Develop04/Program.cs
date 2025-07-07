@@ -3,10 +3,6 @@ using System.Collections.Generic;
 using System.Threading;
 using System.Linq;
 
-class Activity
-{
-    // Base class for activities; add common properties or methods if needed
-}
 
 class Program
 {
@@ -22,8 +18,7 @@ class Program
             Console.WriteLine("  4. Quit");
             Console.Write("Select a choice from the menu: ");
             string choice = Console.ReadLine();
-
-            Activity activity = null; 
+ 
 
             switch (choice)
             {
