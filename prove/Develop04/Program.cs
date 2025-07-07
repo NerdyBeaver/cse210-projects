@@ -1,4 +1,4 @@
-//To show creativity and exceed the requirements, I added dots
+//To show creativity and exceed th.e requirements, I added dots
 // that expland and contract during the breathing activity.
 
 
